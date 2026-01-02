@@ -1,104 +1,106 @@
-# Deepfake detection using Deep Learning (ResNext and LSTM)
+Deepfake Video Detection using Deep Learning
 
-## Give a Star⭐ to repo and Don't forget to <a href="https://www.buymeacoffee.com/abhijitjadhav" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 35px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a> 
+ResNeXt + LSTM based Approach
 
-</a>
+Overview
 
-## Latest Update
-#### We have dockerised the [Django Application](https://github.com/abhijitjadhav1998/Deepfake_detection_using_deep_learning/tree/master/Django%20Application) now you can spin up a container within seconds without worring about dependencies
+With the rapid rise of AI-generated media, detecting manipulated (deepfake) videos has become a critical challenge.
+This project focuses on detecting deepfake videos using deep learning, leveraging a combination of CNN-based spatial feature extraction and temporal sequence modeling.
 
+The system uses a pretrained ResNeXt network to extract frame-level features from videos and an LSTM network to capture temporal inconsistencies across frames. The final model classifies videos as real or fake.
 
-## 1. Introduction
-This projects aims in detection of video deepfakes using deep learning techniques like ResNext and LSTM. We have achived deepfake detection by using transfer learning where the pretrained ResNext CNN is used to obtain a feature vector, further the LSTM layer is trained using the features. For more details follow the [documentaion](https://github.com/abhijitjadhav1998/Deepfake_detection_using_deep_learning/tree/master/Documentation).
+🚀 Key Highlights
 
-You can also watch [this Youtube video](https://www.youtube.com/watch?v=_q16aJTXVRE) to get a better intuition about the project.
-You can watch [this playList](https://www.youtube.com/watch?v=quJ8Rv84oA0&list=PLNIj0dkfMA1FsD5xR4IEc8vdwr66_WExl) for step by step installation.
+🎯 Deepfake detection using transfer learning
 
-You can read more about the project on <a href="https://abhijithjadhav.medium.com/deepfake-video-detection-using-long-short-term-memory-df3674f83ecc" target="_blank"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium" /></a>&nbsp;
+🧠 Feature extraction via ResNeXt CNN
 
+⏱️ Temporal modeling using LSTM
 
-## 2. Directory Structure
-For ease of understanding the project is structured in below format
-```
+🎥 Video-level classification
+
+🌐 Web-based interface built with Django
+
+🐳 Fully Dockerized for easy deployment
+
+💻 Works on CUDA and non-CUDA systems
+
+🏗️ Project Structure
 Deepfake_detection_using_deep_learning
-    |
-    |--- Django Application
-    |--- Model Creation
-    |--- Documentaion
-```
-1. Django Application 
-   - This directory consists of the django made application of our work. Where a user can upload the video and submit it to the model for prediction. The trained model performs the prediction and the result is displayed on the screen.
-2. Model Creation
-   - This directory consists of the step by step process of creating and training a deepfake detection model using our approach.
-3. Documentation
-   - This directory consists of all the documentation done during the project
-   
-## 3. System Architecture
-<p align="center">
-  <img src="https://github.com/abhijitjadhav1998/Deepfake_detection_using_deep_learning/blob/master/github_assets/System%20Architecture.png" />
-</p>
+│
+├── Django_Application
+│   ├── Web interface for video upload & prediction
+│   └── Backend integration with trained model
+│
+├── Model_Creation
+│   ├── Data preprocessing
+│   ├── Feature extraction (ResNeXt)
+│   └── Sequence modeling & training (LSTM)
+│
+└── Documentation
+    └── Project reports, diagrams, and explanations
 
-## 4. Demo 
-### You can watch the [youtube video](https://www.youtube.com/watch?v=_q16aJTXVRE&t=823s) for demo
+    System Architecture
 
-<p align="center">
-  <img src="https://github.com/abhijitjadhav1998/Deepfake_detection_using_deep_learning/blob/master/github_assets/fakegif.gif" />
-</p>
+Input Video
 
-## 5. Our Results
+Frame Extraction
 
-| Model Name | No of videos | No of Frames | Accuracy |
-|------------|--------------|--------------|----------|
-|model_84_acc_10_frames_final_data.pt |6000 |10 |84.21461|
-|model_87_acc_20_frames_final_data.pt | 6000 |20 |87.79160|
-|model_89_acc_40_frames_final_data.pt | 6000| 40 |89.34681|
-|model_90_acc_60_frames_final_data.pt | 6000| 60 |90.59097 |
-|model_91_acc_80_frames_final_data.pt | 6000 | 80 | 91.49818 |
-|model_93_acc_100_frames_final_data.pt| 6000 | 100 | 93.58794|
+Feature Extraction using ResNeXt
 
-## 6. Contributors
+Temporal Learning via LSTM
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/abhijitjadhav1998/"><img src="https://avatars.githubusercontent.com/u/38549908?v=4?s=100" width="100px;" alt="Abhijit Jadhav"/><br /><sub><b>Abhijit Jadhav</b></sub></a><br /><a href="#projectManagement-abhijitjadhav1998" title="Project Management">📆</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://vthonte.vercel.app/"><img src="https://avatars.githubusercontent.com/u/43621438?v=4?s=100" width="100px;" alt="Vishwesh Thonte"/><br /><sub><b>Vishwesh Thonte</b></sub></a><br /><a href="#maintenance-vthonte" title="Maintenance">🚧</a></td>
-    </tr>
-  </tbody>
-</table>
+Binary Classification (Real / Fake)
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+Result Display via Django Web App
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+Experimental Results
+Model File	Videos	Frames per Video	Accuracy (%)
+model_84_acc_10_frames	6000	10	84.21
+model_87_acc_20_frames	6000	20	87.79
+model_89_acc_40_frames	6000	40	89.34
+model_90_acc_60_frames	6000	60	90.59
+model_91_acc_80_frames	6000	80	91.49
+model_93_acc_100_frames	6000	100	93.58
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+Tech Stack
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+Python
 
-#### 6.1 Offline Contributors
-   1. Jay Patel
-   2. Hitendra Patil
-   3. Abhishek Patange
-   
-## 7. License
+PyTorch
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+ResNeXt (Pretrained CNN)
 
-## 8. We welcome Open Source Contribution. 
-### Below are the some changes that can be applied to the project. New Ideas will be appreciated.
-- [ ] Deploying the applications in free cloud 
-- [ ] Creating open source API for detection
-- [ ] Batch processing of entire video instead of processing first 'x' frames.
-- [ ] Optimizing the code for faster execution.
-#### Completed 
-- [X] Dockerizing the app
-- [X] Enabling working of project on Non Cuda Computers. i.e on normal or AMD GPUs
+LSTM
 
-## 9. Dont forget to Star⭐ this repo 😉 and  <a href="https://www.buymeacoffee.com/abhijitjadhav" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 35px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a> 
+Django
+
+Docker
+
+OpenCV
+
+NumPy
+
+🧪 Features Implemented
+
+✔️ Dockerized application
+
+✔️ Support for systems without NVIDIA CUDA
+
+✔️ End-to-end deepfake detection pipeline
+
+✔️ Web-based video upload and prediction
+
+🔮 Future Enhancements
+
+We actively welcome improvements and contributions. Possible extensions include:
+
+☁️ Deployment on free cloud platforms
+
+🔗 Public REST API for deepfake detection
+
+📦 Batch processing of entire videos
+
+⚡ Performance and inference speed optimization
+
+📈 Model explainability & visualization tools
